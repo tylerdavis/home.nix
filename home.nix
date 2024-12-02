@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
-
+# let
+#   llm-claude-3 = pkgs.callPackage ./packages/llm-claude-3/default.nix { };
+# in
 {
   home.username = "tmd";
   home.homeDirectory = lib.mkDefault "/Users/tmd";
@@ -7,6 +9,9 @@
   home.packages = [
     pkgs.nil
     pkgs._1password-cli
+    pkgs.yq
+    pkgs.gh
+    # (pkgs.python3.withPackages (ps: [ps.llm llm-claude-3 ]))
   ];
 
   home.file = {
@@ -20,6 +25,7 @@
 
   programs.home-manager.enable = true;    
   programs.direnv.enable = true;
+  programs.bat.enable = true;
 
   imports = [
     ./programs/eza.nix
@@ -30,5 +36,6 @@
     ./programs/lazygit.nix
     ./programs/ripgrep.nix
     ./programs/zsh.nix
+    ./programs/awscli.nix
   ];
 }

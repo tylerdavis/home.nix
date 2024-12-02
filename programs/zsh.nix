@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.zsh = {
     enable = true;
@@ -7,10 +7,15 @@
     };
 
     shellAliases = {
+      cat = "bat";
       lg = "lazygit";
+      l = "lla";
     };
 
-    initExtra = "export PATH=$PATH:/Applications/kitty.app/Contents/MacOS\n";
+    initExtra = ''
+      export PATH=$PATH:/Applications/kitty.app/Contents/MacOS\n
+      rebuild () { darwin-rebuild switch --flake ~/.config/nix }
+    '';
 
     history = {
       extended = true;

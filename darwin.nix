@@ -57,6 +57,7 @@
 
     imports = [
       ./services/aerospace.nix
+      ./services/postgresql.nix
     ];
     
     nixpkgs.hostPlatform = "aarch64-darwin";
