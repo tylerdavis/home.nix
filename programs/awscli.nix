@@ -10,54 +10,54 @@
         region = "us-east-1";
         output = "json";
       };
-      sandbox = {
+      "profile sandbox" = {
         sso_session = "general_sso";
         sso_account_id = "569779214408";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      staging = {
+      "profile staging" = {
         sso_session = "general_sso";
         sso_account_id = "734569489806";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      infrastructure = {
+      "profile infrastructure" = {
         sso_session = "general_sso";
         sso_account_id = "732508301558";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      "nexus-staging" = {
+      "profile nexus-staging" = {
         sso_session = "general_sso";
         sso_account_id = "905418421770";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      "general_sso" = {
+      "sso-session general_sso" = {
         sso_start_url = "https://launchnotes.awsapps.com/start";
         sso_region = "us-east-1";
         sso_registration_scopes = "sso:account:access";
       };
-      production = {
+      "profile production" = {
         sso_session = "prod_sso";
         sso_account_id = "375202058133";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      "nexus-production" = {
+      "profile nexus-production" = {
         sso_session = "prod_sso";
         sso_account_id = "381492026895";
         sso_role_name = "Engineer";
         region = "us-east-1";
         output = "json";
       };
-      "prod_sso" = {
+      "profile prod_sso" = {
         sso_start_url = "https://launchnotes.awsapps.com/start";
         sso_region = "us-east-1";
         sso_registration_scopes = "sso:account:access";

@@ -20,6 +20,7 @@
     	  stylix.darwinModules.stylix
         ./darwin.nix
         home-manager.darwinModules.home-manager {
+          nixpkgs.overlays = [ (import ./overlays/llm-claude3.nix) ];
     	    users.users.tmd.home = "/Users/tmd";
     	    home-manager = {
             useGlobalPkgs = true;
