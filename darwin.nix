@@ -14,7 +14,6 @@
       };
     };
 
-   #  services.karabiner-elements.enable = true;
     nixpkgs.config.allowUnfree = true;
 
     security = {
@@ -58,7 +57,6 @@
 
     imports = [
       ./services/aerospace.nix
-      ./services/sketchybar.nix
     ];
     
     nixpkgs.hostPlatform = "aarch64-darwin";

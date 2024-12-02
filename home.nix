@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.username = "tmd";
@@ -6,6 +6,7 @@
 
   home.packages = [
     pkgs.nil
+    pkgs._1password-cli
   ];
 
   home.file = {
@@ -18,6 +19,7 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   programs.home-manager.enable = true;    
+  programs.direnv.enable = true;
 
   imports = [
     ./programs/eza.nix

@@ -7,6 +7,7 @@
       enableZshIntegration = true;
     };
     settings = {
+      window_padding_width = "6";
       tab_bar_style = "powerline";
       tab_bar_margin_width = "10.0";
       tab_bar_margin_height = "4.0 4.0";

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   services.aerospace = {
+    enable = false;
     settings = {
       accordion-padding = 0;
       gaps = {
