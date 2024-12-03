@@ -1,5 +1,15 @@
 { pkgs, lib, ... }:
+let
+  llm-claude = pkgs.python311Packages.callPackage ../packages/llm-claude/default.nix {
+    inherit (pkgs.python311Packages) anthropic;
+  };
+  llm-claude-3 = pkgs.python311Packages.callPackage ../packages/llm-claude-3/default.nix {
+    inherit (pkgs.python311Packages) anthropic;
+    inherit llm-claude;
 
+  };
+  llmWithPlugins = pkgs.python311Packages.llm.withPlugins [ llm-claude-3 ];
+in
 {
   home.username = "tmd";
   home.homeDirectory = lib.mkDefault "/Users/tmd";
@@ -9,7 +19,7 @@
     pkgs._1password-cli
     pkgs.yq
     pkgs.gh
-    (pkgs.python3.withPackages (ps: [ps.llm ps.llm-claude-3 ]))
+    llmWithPlugins
   ];
 
   home.file = {
