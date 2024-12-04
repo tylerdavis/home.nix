@@ -1,14 +1,22 @@
 { pkgs, lib, ... }:
 let
-  llm-claude = pkgs.python311Packages.callPackage ../packages/llm-claude/default.nix {
+  llm-claude = pkgs.python311Packages.callPackage ./packages/llm-claude/default.nix {
     inherit (pkgs.python311Packages) anthropic;
   };
-  llm-claude-3 = pkgs.python311Packages.callPackage ../packages/llm-claude-3/default.nix {
+
+  llm-claude-3 = pkgs.python311Packages.callPackage ./packages/llm-claude-3/default.nix {
     inherit (pkgs.python311Packages) anthropic;
     inherit llm-claude;
-
   };
-  llmWithPlugins = pkgs.python311Packages.llm.withPlugins [ llm-claude-3 ];
+
+  pyWithLlm = pkgs.python3.withPackages (ps: [
+    ps.llm
+    llm-claude-3
+  ]);
+
+  llm-with-plugins = pkgs.writeShellScriptBin "llm" ''
+    exec ${pyWithLlm}/bin/llm "$@"
+  '';
 in
 {
   home.username = "tmd";
@@ -19,7 +27,7 @@ in
     pkgs._1password-cli
     pkgs.yq
     pkgs.gh
-    llmWithPlugins
+    llm-with-plugins
   ];
 
   home.file = {
@@ -34,6 +42,9 @@ in
   programs.home-manager.enable = true;    
   programs.direnv.enable = true;
   programs.bat.enable = true;
+  programs.vscode.enable = true;
+  programs.nnn.enable = true;
+  programs.neovim.enable = true;
 
   imports = [
     ./programs/eza.nix

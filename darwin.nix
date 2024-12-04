@@ -1,8 +1,7 @@
 { pkgs, ... }: 
 
 {
-    environment.systemPackages = with pkgs; [
-      vim
+    environment.systemPackages = [
     ];
 
     services.nix-daemon.enable = true;
@@ -29,17 +28,17 @@
       fonts = {
         serif = {
           package = pkgs.monaspace;
-          name = "Monaspace Xenon Light";
+          name = "Monaspace Xeon Var";
         };
 
         sansSerif = {
-          package = pkgs.dejavu_fonts;
-          name = "Monaspace Argon Light";
+          package = pkgs.monaspace;
+          name = "Monaspace Argon Var";
         };
 
         monospace = {
           package = pkgs.monaspace;
-          name = "Monaspace Argon Light";
+          name = "Monaspace Neon Var";
         };
 
         emoji = {
