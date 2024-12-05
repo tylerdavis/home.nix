@@ -24,11 +24,9 @@
       bold_italic_font = "auto";
 
       font_size = "13.0";
-      modify_font = "cell_height 180%";
+      modify_font = "cell_height 170%";
       
       disable_ligatures = "cursor";
-
-      box_drawing_scale = "0.001, 1, 1.5, 2";
     };
   };
 }

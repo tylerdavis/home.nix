@@ -44,17 +44,20 @@ in
   programs.bat.enable = true;
   programs.vscode.enable = true;
   programs.nnn.enable = true;
-  programs.neovim.enable = true;
+  programs.fzf = {
+    enable = true;
+  };
 
   imports = [
+    ./programs/awscli.nix
     ./programs/eza.nix
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/helix.nix
     ./programs/kitty.nix
     ./programs/lazygit.nix
+    ./programs/neovim/default.nix
     ./programs/ripgrep.nix
     ./programs/zsh.nix
-    ./programs/awscli.nix
   ];
 }
