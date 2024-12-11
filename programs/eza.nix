@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.eza = {
-    enableZshIntegration = true;
+#    enableZshIntegration = true;
     enable = true;
     extraOptions = [
       "--group-directories-first"

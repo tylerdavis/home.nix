@@ -2,9 +2,11 @@
 
 {
     environment.systemPackages = [
+      pkgs.tailscale
     ];
 
     services.nix-daemon.enable = true;
+    services.tailscale.enable = true;
 
     nix = {
       package = pkgs.nix;

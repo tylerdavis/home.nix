@@ -26,7 +26,6 @@ in
     pkgs.nil
     pkgs._1password-cli
     pkgs.yq
-    pkgs.gh
     llm-with-plugins
   ];
 
@@ -47,6 +46,7 @@ in
   programs.fzf = {
     enable = true;
   };
+  programs.gh.enable = true;
 
   imports = [
     ./programs/awscli.nix

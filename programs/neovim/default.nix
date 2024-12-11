@@ -22,11 +22,11 @@ in
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
-      mini-nvim
       telescope-nvim
+      oil-nvim
+      mini-nvim
       telescope-file-browser-nvim
       telescope-fzf-native-nvim
-      # (fromGitHub "HEAD" "elihunter173/dirbuf.nvim")
     ];
 
     extraLuaConfig = builtins.readFile ./init.lua;
