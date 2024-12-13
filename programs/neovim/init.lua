@@ -25,10 +25,6 @@ require('mini.pairs').setup()
 require('mini.surround').setup()
 require('mini.fuzzy').setup()
 
-vim.keymap.set('n', '<space>f', Minifiles.open)
+require('mini.files').setup()
 
-require('mini.files').setup({
-  windows = {
-    preview = true
-  }
-})
+vim.keymap.set('n', '<space>f', MiniFiles.open)

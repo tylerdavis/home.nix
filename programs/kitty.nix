@@ -6,6 +6,15 @@
     shellIntegration = {
       enableZshIntegration = true;
     };
+
+    darwinLaunchOptions = [
+      "--single-instance"
+    ];
+
+    keybindings = {
+      "kitty_mod+0" = "toggle_layout stack";
+    };
+
     settings = {
       window_padding_width = "12 36 4 36";
 
@@ -20,7 +29,8 @@
       enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
       
       # Fonts
-      font_family = "family='Monaspace Neon Var' style=Light features='+calt +ss07 +ss08 +ss02 +ss01 +ordn +ss09 +ss03 +ss04 +ss05 +ss06'";
+      font_family = "family='Monaspace Neon Var' style=Light";
+      # font_family = "family='Monaspace Neon Var' style=Light features='+calt +ss07 +ss08 +ss02 +ss01 +ordn +ss09 +ss03 +ss04 +ss05 +ss06'";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
