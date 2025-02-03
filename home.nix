@@ -23,6 +23,7 @@ in
   home.homeDirectory = lib.mkDefault "/Users/tmd";
 
   home.packages = [
+    pkgs.ghostty
     pkgs.nil
     pkgs._1password-cli
     pkgs.yq
@@ -48,6 +49,11 @@ in
   };
   programs.gh.enable = true;
 
+  # programs.ghostty = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
+
   imports = [
     ./programs/awscli.nix
     ./programs/eza.nix
@@ -57,6 +63,7 @@ in
     ./programs/kitty.nix
     ./programs/lazygit.nix
     ./programs/neovim/default.nix
+    ./programs/spotify.nix
     ./programs/ripgrep.nix
     ./programs/zsh.nix
   ];
