@@ -15,6 +15,7 @@
     initExtra = ''
       export PATH=$PATH:/Applications/kitty.app/Contents/MacOS\n
       rebuild () { darwin-rebuild switch --flake ~/.config/nix }
+      alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
     '';
 
     history = {

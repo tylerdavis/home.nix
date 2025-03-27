@@ -5,7 +5,7 @@
       pkgs.tailscale
     ];
 
-    services.nix-daemon.enable = true;
+    # services.nix-daemon.enable = true;
     services.tailscale.enable = true;
 
     nix = {
@@ -19,7 +19,8 @@
 
     security = {
       pam = {
-        enableSudoTouchIdAuth = true;
+        # enableSudoTouchIdAuth = true;
+        services.sudo_local.touchIdAuth = true;
       };
     };
 
@@ -62,5 +63,5 @@
     ];
     
     nixpkgs.hostPlatform = "aarch64-darwin";
-    system.stateVersion = 4;
+    system.stateVersion = 5;
 }

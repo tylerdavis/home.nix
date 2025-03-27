@@ -23,10 +23,10 @@ in
   home.homeDirectory = lib.mkDefault "/Users/tmd";
 
   home.packages = [
-    pkgs.ghostty
     pkgs.nil
     pkgs._1password-cli
     pkgs.yq
+    pkgs.glances
     llm-with-plugins
   ];
 
@@ -48,11 +48,6 @@ in
     enable = true;
   };
   programs.gh.enable = true;
-
-  # programs.ghostty = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
 
   imports = [
     ./programs/awscli.nix
